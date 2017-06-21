@@ -1,4 +1,5 @@
 use std::env;
+use std::process;
 use std::net::TcpListener;
 use std::error::Error;
 
@@ -28,7 +29,7 @@ fn main() {
         },
         Err(e) => {
             println!("Bind {}:{} error: {}.", ip, port, e.description());
-            return;
+            process::exit(1);
         }
     }
 
